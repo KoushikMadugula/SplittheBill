@@ -5,6 +5,7 @@ using System;
 [TestClass]
 public class SplitAmountCalcTests
 {
+    // Testing by giving valid inputs
     [TestMethod]
     public void CalculateTotalSplitAmount_InputGivenValid_ReturnsCorrectAmount()
     {
@@ -16,6 +17,7 @@ public class SplitAmountCalcTests
         Assert.AreEqual(expectedSplitAmount, actualSplitAmount);
     }
 
+    // Testing by giving number of people as zero
     [TestMethod]
     public void CalculateTotalSplitAmount_ZeroPeople_ThrowsException()
     {
@@ -25,6 +27,7 @@ public class SplitAmountCalcTests
         Assert.ThrowsException<ArgumentException>(() => splitCalc.CalcTotalSplitAmount(amount, numPeople));
     }
 
+    // Testing by giving negative value for people
     [TestMethod]
     public void CalculateTotalSplitAmount_NegativeValueForPeople_ThrowsException()
     {
@@ -37,6 +40,7 @@ public class SplitAmountCalcTests
     [TestClass]
     public class TipCalcTests
     {
+    // Testing by giving all valid inputs
     [TestMethod]
     public void CalcTip_InputGivenValid_ReturnsCorrectTipAmounts()
     {
@@ -63,6 +67,7 @@ public class SplitAmountCalcTests
 [TestClass]
 public class TipPerPersonCalcTests
 {
+    // Testing by giving all valid inputs
     [TestMethod]
     public void CalcTipPerPerson_InputGivenValid_ReturnsCorrectAmount()
     {
@@ -78,6 +83,7 @@ public class TipPerPersonCalcTests
         Assert.AreEqual(expectedTipPerPerson, actualTipPerPerson);
     }
 
+    // Testing by giving patrons as zero
     [TestMethod]
     public void CalcTipPerPerson_ZeroPatrons_ThrowsException()
     {
@@ -90,6 +96,7 @@ public class TipPerPersonCalcTests
         Assert.ThrowsException<ArgumentException>(() => calculator.CalcTipPerPerson(price, numPatrons, tipPercent));
     }
 
+    // Testing by giving negative value to patrons
     [TestMethod]
     public void CalcTipPerPerson_NegativePatrons_ThrowsException()
     {
